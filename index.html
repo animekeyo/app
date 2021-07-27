@@ -10,34 +10,14 @@
     <!---/////////////////////////------sweetalert------/////////////////////////--->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.7/dist/sweetalert2.all.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <!---/////////////////////////------hammer------/////////////////////////--->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
-    <!---/////////////////////////------aos------/////////////////////////--->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!---/////////////////////////------select2------/////////////////////////--->
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <!---/////////////////////////------tippy------/////////////////////////--->
+
+    <!---/////////////////////////------imagesloaded------/////////////////////////--->
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
-    <!---/////////////////////////------react------/////////////////////////--->
-    <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <!---/////////////////////////------firebase------/////////////////////////--->
-    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-functions.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-messaging.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-storage.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-performance.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-remote-config.js"></script>
-    <!---/////////////////////////------MAIN SCRIPTS------/////////////////////////--->
+
     <script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
     <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css" />
     <script src="/scripts/purl.js?clear1-111"></script>
@@ -46,10 +26,28 @@
     <script src="/scripts/download.js"></script>
     <style>
         @import url("/styles/style.css?clear1-5");
+         :root {
+            --r1: hsl(210deg 22% 1%);
+            --r2: hsl(210deg 22% 2%);
+            --r3: hsl(210deg 22% 3%);
+            --r4: hsl(210deg 22% 4%);
+            --r5: hsl(210deg 22% 5%);
+            --r6: hsl(210deg 22% 6%);
+            --r7: hsl(210deg 22% 7%);
+            --r8: hsl(210deg 22% 8%);
+            --r9: hsl(210deg 22% 9%);
+            --r10: hsl(210deg 22% 10%);
+            --r11: hsl(210deg 22% 11%);
+            --r12: hsl(210deg 22% 12%);
+            --r13: hsl(210deg 22% 13%);
+            --r14: hsl(210deg 22% 14%);
+            --r15: hsl(210deg 22% 15%);
+        }
+        
         .f1 {
             max-width: 4rem;
             z-index: 2;
-            background-color: var(--r1);
+            background-color: var(--r5);
         }
         
         .f2 {
@@ -60,13 +58,13 @@
         .f21 {
             max-width: 15rem;
             z-index: 1;
-            background-color: var(--r3);
+            background-color: var(--r7);
             overflow-y: scroll;
         }
         
         .f22 {
             margin-left: 15rem;
-            background-color: var(--r4);
+            background-color: var(--r8);
         }
         
         [nn] {
@@ -120,7 +118,7 @@
         }
         
          ::-webkit-scrollbar-track {
-            background-color: var(--r5);
+            background-color: var(--r7);
         }
         
          ::-webkit-scrollbar-thumb:hover {
@@ -180,6 +178,7 @@
             transition-duration: 0.3s;
             transition-timing-function: cubic-bezier(1, -3.11, 0, 3.11);
             transition-delay: 0s;
+            overflow: hidden;
         }
         
         .f12 {
@@ -194,7 +193,7 @@
             padding: 0.1rem 0.6rem;
             color: white;
             border-radius: 5px;
-            background-color: var(--r5);
+            background-color: var(--r10);
         }
         
         .f11-c svg {
@@ -321,7 +320,7 @@
         
         .f221121z {
             height: 10rem;
-            background-color: var(--r2);
+            background-color: var(--r6);
             border-radius: 10px;
         }
         
@@ -449,7 +448,7 @@
             flex-direction: row;
             padding: 0.3rem;
             gap: 0.3rem;
-            background: var(--r3);
+            background: var(--r15);
         }
         
         .f2221211 {
@@ -490,6 +489,216 @@
             max-width: 22rem;
             height: 12rem;
         }
+        
+        .f221121s-tt {
+            height: fit-content;
+            width: -webkit-fill-available;
+            min-width: 4rem;
+            max-width: 17rem;
+            top: unset;
+            left: 0;
+            bottom: 0;
+            margin: 0.5rem;
+            margin-right: 3.1rem;
+            padding: 0.5rem;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: flex-start;
+            background: #0e121685;
+            border-radius: 21px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .tippy-box[data-theme~='tomatoxx'] {
+            background-color: var(--c15);
+            color: var(--c6);
+            border-radius: 5px;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+        }
+        
+        .tippy-box[data-theme~='tomatoxx'][data-placement^='top']>.tippy-arrow::before {
+            border-top-color: var(--c15);
+        }
+        
+        .tippy-box[data-theme~='tomatoxx'][data-placement^='bottom']>.tippy-arrow::before {
+            border-bottom-color: var(--c15);
+        }
+        
+        .tippy-box[data-theme~='tomatoxx'][data-placement^='left']>.tippy-arrow::before {
+            border-left-color: var(--c15);
+        }
+        
+        .tippy-box[data-theme~='tomatoxx'][data-placement^='right']>.tippy-arrow::before {
+            border-right-color: var(--c15);
+        }
+        
+        .tippy-box[data-theme~='tomatoxx'][data-placement^=right]>.tippy-arrow {
+            left: 3px;
+        }
+        
+        .f22113xl {
+            height: fit-content;
+            padding: 1.5rem 0rem;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            background: var(--r3);
+            border-radius: 10px;
+        }
+        
+        .f221121nn3 {
+            background: var(--r10);
+            display: flex;
+            align-content: center;
+            align-items: center;
+            flex-direction: row;
+            justify-content: flex-start;
+            font-size: 0.7rem;
+            padding: 0.5rem 0.8rem;
+            height: 1.9rem;
+        }
+        
+        .f221121nn41 {
+            height: 1.8rem;
+            width: 1.8rem;
+            background-color: #5865f2;
+            border-radius: 100rem;
+        }
+        
+        .f221121nn42 {
+            width: fit-content;
+            font-size: 0.8rem;
+        }
+        
+        .f221121nn4 {
+            height: 2.8rem;
+            background: var(--r6);
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            padding: 0rem 0.5rem;
+            gap: 0.5rem;
+        }
+        
+        .f1123x45di {
+            text-transform: uppercase;
+            font-size: 0.5rem;
+            padding: 0.5rem;
+            background: #5865f2;
+            border-radius: 100rem;
+            top: unset;
+            bottom: 0;
+            left: unset;
+            right: 0;
+            margin: 0.65rem;
+        }
+        
+        .f212 {
+            width: -webkit-fill-available;
+            height: fit-content;
+            top: unset;
+            bottom: 0;
+            overflow: hidden;
+            padding: 0.5rem;
+            gap: 0.5rem;
+            background: var(--r9);
+        }
+        
+        .f212 iframe {
+            width: -webkit-fill-available;
+            height: 122px;
+            border-radius: 5px;
+            pointer-events: none;
+            user-select: none;
+        }
+        
+        .f2122 {
+            display: flex;
+            flex-direction: row;
+            gap: 0.5rem;
+        }
+        
+        .f21221 {
+            height: 1.8rem;
+            width: 1.8rem;
+            background-color: #5865f2;
+            border-radius: 100rem;
+        }
+        
+        .f21222 {
+            max-width: 9rem;
+            gap: 0.1rem;
+            font-size: 0.6rem;
+            display: flex;
+            align-items: flex-start;
+            align-content: flex-start;
+        }
+        
+        .f212221 {
+            width: fit-content;
+            font-size: 0.75rem;
+        }
+        
+        .f212222 {
+            max-width: 10rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: block;
+        }
+        
+        .f21221 svg {
+            fill: white;
+            width: inherit;
+            height: inherit;
+            padding: 0.2rem;
+        }
+        
+        img.f221121nn2 {
+            background-color: white;
+        }
+        
+        .f11-c img {
+            width: -webkit-fill-available;
+            height: -webkit-fill-available;
+        }
+        
+        .avatar-FDgdefv5 {
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .avatar-FDgdefv5 img[oid="1"] {
+            width: 33rem;
+            position: absolute;
+            left: -5rem;
+            top: -6rem;
+            filter: blur(36px);
+        }
+        
+        .avatar-FDgdefv5 div[oid="2"] {
+            width: -webkit-fill-available;
+            height: -webkit-fill-available;
+            margin: 5rem;
+            z-index: 2;
+            border-radius: 100rem;
+        }
+        
+        .avatar-FDgdefv5 div[oid="3"] {
+            top: unset;
+            left: unset;
+            right: 0;
+            bottom: 0;
+            padding: 0.4rem 0.6rem;
+            background: #5865f2;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            margin: 0.5rem;
+            border-radius: 100rem;
+        }
     </style>
 </head>
 
@@ -500,31 +709,16 @@
             <div f11 ff fw class="f11">
                 <div f11-c ff fw class="f11-c">
 
-                    <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0)">
-                    <path d="M39.6144 19.48H24.7796V0L5 24.3499H19.8347V43.8299L39.6144 19.48Z" fill="white"/>
-                    </g>
-                    <defs>
-                    <clipPath id="clip0">
-                    <rect width="43.83" height="43.83" fill="white"/>
-                    </clipPath>
-                    </defs>
-                    </svg>
+                    <img src="https://i.imgur.com/ZE87vN3.png" alt="">
 
                 </div>
             </div>
             <div f12 ff fw class="f12">
                 <div f12-c ff fw class="f11-c">
-
+                    <img src="https://i.imgur.com/O4QJgYZ.png" alt="Discord">
                 </div>
                 <div f12-c ff fw class="f11-c">
-
-                </div>
-                <div f12-c ff fw class="f11-c">
-
-                </div>
-                <div f12-c ff fw class="f11-c">
-
+                    <img src="https://i.imgur.com/wzRgUwG.png" alt="Twitter">
                 </div>
             </div>
         </div>
@@ -538,83 +732,73 @@
                         Anime Keyo
                     </div>
                     <input placeholder="Search for options.." ff fw if211 class="if211" type="text">
-
-                    <div click page="home" f2111 ff fw>
-                        <div f21111 ff fw>
-
-
-                            <svg width="27" height="24" viewBox="0 0 27 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M25.5789 2.07578e-05H17.0525C16.7299 2.07578e-05 16.4172 0.109694 16.1643 0.311949L14.2103 1.88014V24L17.5512 21.365H25.5789C26.3634 21.365 27 20.7269 27 19.9407V1.42435C27 0.638121 26.3634 2.07578e-05 25.5789 2.07578e-05Z" fill="white"/>
-    <path d="M12.7897 1.88012L10.8357 0.311928C10.5828 0.109673 10.2701 0 9.94755 0H1.42108C0.636643 0 0 0.6381 0 1.42433V19.9406C0 20.7269 0.636643 21.365 1.42108 21.365H9.44875L12.7897 24V1.88012Z" fill="white"/>
-    </svg>
-
-
-                        </div>
-                        <div f21112 ff fw>
-                            Home
-                        </div>
-                    </div>
-                    <div click page="following" f2111 ff fw>
-                        <div f21111 ff fw>
-
-                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M11 9.9C10.39 9.9 9.9 10.39 9.9 11C9.9 11.61 10.39 12.1 11 12.1C11.61 12.1 12.1 11.61 12.1 11C12.1 10.39 11.61 9.9 11 9.9ZM11 1C5.48 1 1 5.48 1 11C1 16.52 5.48 21 11 21C16.52 21 21 16.52 21 11C21 5.48 16.52 1 11 1ZM13.19 13.19L5 17L8.81 8.81L17 5L13.19 13.19Z" fill="white"/>
-                            </svg>
-
-                        </div>
-                        <div f21112 ff fw>
-                            following
-                        </div>
-                    </div>
-                    <div click page="followers" f2111 ff fw>
-                        <div f21111 ff fw>
-
-                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M11 9.9C10.39 9.9 9.9 10.39 9.9 11C9.9 11.61 10.39 12.1 11 12.1C11.61 12.1 12.1 11.61 12.1 11C12.1 10.39 11.61 9.9 11 9.9ZM11 1C5.48 1 1 5.48 1 11C1 16.52 5.48 21 11 21C16.52 21 21 16.52 21 11C21 5.48 16.52 1 11 1ZM13.19 13.19L5 17L8.81 8.81L17 5L13.19 13.19Z" fill="white"/>
-                            </svg>
-
-                        </div>
-                        <div f21112 ff fw>
-                            followers
-                        </div>
-                    </div>
-                    <div click page="profile" f2111 ff fw>
-                        <div f21111 ff fw>
-
-
-                            <svg style="margin: 3px;" width="40" height="41" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M30.0325 10.3022C30.0325 15.7709 25.598 20.2226 20.1451 20.2226C14.6945 20.2226 10.2575 15.7709 10.2575 10.3022C10.2575 4.83369 14.6921 0.381958 20.1451 0.381958C25.598 0.381958 30.0325 4.83369 30.0325 10.3022ZM0.370117 37.5831C0.370117 28.821 8.50253 22.7027 20.1451 22.7027C31.79 22.7027 39.92 28.821 39.92 37.5831V40.0632H0.370117V37.5831Z" fill="white"/>
-    </svg>
-
-                        </div>
-                        <div f21112 ff fw>
-                            Profile
-                        </div>
-                    </div>
-                    <div click page="history" f2111 ff fw>
-                        <div f21111 ff fw>
-
-
-                            <svg style="margin: 3px;" width="40" height="41" viewBox="0 0 40 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M30.0325 10.3022C30.0325 15.7709 25.598 20.2226 20.1451 20.2226C14.6945 20.2226 10.2575 15.7709 10.2575 10.3022C10.2575 4.83369 14.6921 0.381958 20.1451 0.381958C25.598 0.381958 30.0325 4.83369 30.0325 10.3022ZM0.370117 37.5831C0.370117 28.821 8.50253 22.7027 20.1451 22.7027C31.79 22.7027 39.92 28.821 39.92 37.5831V40.0632H0.370117V37.5831Z" fill="white"/>
-    </svg>
-
-                        </div>
-                        <div f21112 ff fw>
-                            History
-                        </div>
-                    </div>
                     <div click page="search" f2111 ff fw>
                         <div f21111 ff fw>
 
 
-                            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M11 9.9C10.39 9.9 9.9 10.39 9.9 11C9.9 11.61 10.39 12.1 11 12.1C11.61 12.1 12.1 11.61 12.1 11C12.1 10.39 11.61 9.9 11 9.9ZM11 1C5.48 1 1 5.48 1 11C1 16.52 5.48 21 11 21C16.52 21 21 16.52 21 11C21 5.48 16.52 1 11 1ZM13.19 13.19L5 17L8.81 8.81L17 5L13.19 13.19Z" fill="white"/>
-                                </svg>
+
+                            <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 60C0 44.087 6.32141 28.8258 17.5736 17.5736C28.8258 6.32141 44.087 0 60 0C75.913 0 91.1742 6.32141 102.426 17.5736C113.679 28.8258 120 44.087 120 60C120 75.913 113.679 91.1742 102.426 102.426C91.1742 113.679 75.913 120 60 120C44.087 120 28.8258 113.679 17.5736 102.426C6.32141 91.1742 0 75.913 0 60H0ZM56 32C52.2228 31.9995 48.4988 32.8906 45.131 34.6007C41.7631 36.3108 38.8464 38.7917 36.6181 41.8416C34.3898 44.8915 32.9128 48.4243 32.3073 52.1526C31.7018 55.8809 31.9848 59.6995 33.1334 63.2979C34.282 66.8962 36.2636 70.1726 38.9172 72.8607C41.5708 75.5487 44.8213 77.5725 48.4045 78.7674C51.9877 79.9623 55.8024 80.2946 59.5382 79.7373C63.274 79.18 66.8256 77.7487 69.904 75.56L81.176 86.832L86.832 81.176L75.56 69.904C78.1118 66.3137 79.6264 62.0905 79.9378 57.6967C80.2492 53.303 79.3454 48.9083 77.3255 44.9941C75.3056 41.0798 72.2474 37.7969 68.4859 35.5049C64.7244 33.213 60.4047 32.0004 56 32Z" fill="white"/>
+    </svg>
+
 
                         </div>
                         <div f21112 ff fw>
                             Search
+                        </div>
+                    </div>
+
+
+                    <div click page="banners" f2111 ff fw>
+                        <div f21111 ff fw>
+
+
+
+
+                            <svg width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M62.6004 73.9158L62.1508 74.3004L24.6296 111.134C27.4024 112.843 30.5969 113.745 33.8542 113.739H60.4717L62.4 106.031C63.2775 102.521 65.0921 99.3146 67.6542 96.7579L79.0833 85.3288L67.8438 74.3004L67.3346 73.8779C66.641 73.3899 65.8122 73.1311 64.9641 73.1379C64.1161 73.1447 63.2915 73.4167 62.6058 73.9158H62.6004ZM89.3913 44.6983C89.3913 44.1634 89.2859 43.6337 89.0812 43.1395C88.8765 42.6453 88.5765 42.1963 88.1982 41.8181C87.82 41.4398 87.3709 41.1398 86.8767 40.9351C86.3825 40.7304 85.8529 40.625 85.3179 40.625C84.783 40.625 84.2533 40.7304 83.7591 40.9351C83.2649 41.1398 82.8159 41.4398 82.4376 41.8181C82.0594 42.1963 81.7594 42.6453 81.5547 43.1395C81.35 43.6337 81.2446 44.1634 81.2446 44.6983C81.2446 45.7786 81.6737 46.8147 82.4376 47.5786C83.2015 48.3425 84.2376 48.7717 85.3179 48.7717C86.3982 48.7717 87.4343 48.3425 88.1982 47.5786C88.9621 46.8147 89.3913 45.7786 89.3913 44.6983V44.6983ZM84.825 79.5871L73.5313 68.5046L72.8379 67.8708C70.6486 66.0309 67.882 65.0195 65.0222 65.0136C62.1624 65.0076 59.3916 66.0075 57.1946 67.8383L56.4579 68.5046L18.8771 105.392C17.1564 102.615 16.2464 99.4126 16.25 96.1458V33.8542C16.25 29.1853 18.1047 24.7076 21.4062 21.4061C24.7076 18.1047 29.1853 16.25 33.8542 16.25H96.1404C100.809 16.25 105.287 18.1047 108.588 21.4061C111.89 24.7076 113.745 29.1853 113.745 33.8542V59.6429C111.157 59.4154 108.551 59.7583 106.11 60.6474C103.669 61.5365 101.453 62.9502 99.6179 64.7888L84.825 79.5871V79.5871ZM73.125 44.6983C73.0908 46.3215 73.381 47.9352 73.9785 49.4448C74.576 50.9544 75.4689 52.3295 76.6047 53.4895C77.7406 54.6496 79.0966 55.5712 80.5932 56.2004C82.0899 56.8296 83.6971 57.1537 85.3206 57.1537C86.9442 57.1537 88.5514 56.8296 90.048 56.2004C91.5447 55.5712 92.9007 54.6496 94.0366 53.4895C95.1724 52.3295 96.0653 50.9544 96.6628 49.4448C97.2603 47.9352 97.5505 46.3215 97.5163 44.6983C97.5163 41.4631 96.2311 38.3604 93.9435 36.0728C91.6558 33.7852 88.5531 32.5 85.3179 32.5C82.0827 32.5 78.98 33.7852 76.6924 36.0728C74.4048 38.3604 73.1196 41.4631 73.1196 44.6983H73.125ZM103.448 68.6238L71.4838 100.588C69.6178 102.452 68.2941 104.789 67.6542 107.348L65.1788 117.26C64.0954 121.577 68.0063 125.483 72.3179 124.405L82.2304 121.924C84.7888 121.285 87.1254 119.964 88.9904 118.1L120.954 86.125C123.216 83.7906 124.47 80.6603 124.444 77.4097C124.418 74.1592 123.115 71.0492 120.816 68.751C118.517 66.4528 115.407 65.1507 112.156 65.1259C108.906 65.1011 105.776 66.3555 103.442 68.6183L103.448 68.6238Z" fill="white"/>
+    </svg>
+
+
+
+                        </div>
+                        <div f21112 ff fw>
+                            Banners
+                        </div>
+                    </div>
+                    <div click page="pfps" f2111 ff fw>
+                        <div f21111 ff fw>
+
+
+
+
+                            <svg width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M62.6004 73.9158L62.1508 74.3004L24.6296 111.134C27.4024 112.843 30.5969 113.745 33.8542 113.739H60.4717L62.4 106.031C63.2775 102.521 65.0921 99.3146 67.6542 96.7579L79.0833 85.3288L67.8438 74.3004L67.3346 73.8779C66.641 73.3899 65.8122 73.1311 64.9641 73.1379C64.1161 73.1447 63.2915 73.4167 62.6058 73.9158H62.6004ZM89.3913 44.6983C89.3913 44.1634 89.2859 43.6337 89.0812 43.1395C88.8765 42.6453 88.5765 42.1963 88.1982 41.8181C87.82 41.4398 87.3709 41.1398 86.8767 40.9351C86.3825 40.7304 85.8529 40.625 85.3179 40.625C84.783 40.625 84.2533 40.7304 83.7591 40.9351C83.2649 41.1398 82.8159 41.4398 82.4376 41.8181C82.0594 42.1963 81.7594 42.6453 81.5547 43.1395C81.35 43.6337 81.2446 44.1634 81.2446 44.6983C81.2446 45.7786 81.6737 46.8147 82.4376 47.5786C83.2015 48.3425 84.2376 48.7717 85.3179 48.7717C86.3982 48.7717 87.4343 48.3425 88.1982 47.5786C88.9621 46.8147 89.3913 45.7786 89.3913 44.6983V44.6983ZM84.825 79.5871L73.5313 68.5046L72.8379 67.8708C70.6486 66.0309 67.882 65.0195 65.0222 65.0136C62.1624 65.0076 59.3916 66.0075 57.1946 67.8383L56.4579 68.5046L18.8771 105.392C17.1564 102.615 16.2464 99.4126 16.25 96.1458V33.8542C16.25 29.1853 18.1047 24.7076 21.4062 21.4061C24.7076 18.1047 29.1853 16.25 33.8542 16.25H96.1404C100.809 16.25 105.287 18.1047 108.588 21.4061C111.89 24.7076 113.745 29.1853 113.745 33.8542V59.6429C111.157 59.4154 108.551 59.7583 106.11 60.6474C103.669 61.5365 101.453 62.9502 99.6179 64.7888L84.825 79.5871V79.5871ZM73.125 44.6983C73.0908 46.3215 73.381 47.9352 73.9785 49.4448C74.576 50.9544 75.4689 52.3295 76.6047 53.4895C77.7406 54.6496 79.0966 55.5712 80.5932 56.2004C82.0899 56.8296 83.6971 57.1537 85.3206 57.1537C86.9442 57.1537 88.5514 56.8296 90.048 56.2004C91.5447 55.5712 92.9007 54.6496 94.0366 53.4895C95.1724 52.3295 96.0653 50.9544 96.6628 49.4448C97.2603 47.9352 97.5505 46.3215 97.5163 44.6983C97.5163 41.4631 96.2311 38.3604 93.9435 36.0728C91.6558 33.7852 88.5531 32.5 85.3179 32.5C82.0827 32.5 78.98 33.7852 76.6924 36.0728C74.4048 38.3604 73.1196 41.4631 73.1196 44.6983H73.125ZM103.448 68.6238L71.4838 100.588C69.6178 102.452 68.2941 104.789 67.6542 107.348L65.1788 117.26C64.0954 121.577 68.0063 125.483 72.3179 124.405L82.2304 121.924C84.7888 121.285 87.1254 119.964 88.9904 118.1L120.954 86.125C123.216 83.7906 124.47 80.6603 124.444 77.4097C124.418 74.1592 123.115 71.0492 120.816 68.751C118.517 66.4528 115.407 65.1507 112.156 65.1259C108.906 65.1011 105.776 66.3555 103.442 68.6183L103.448 68.6238Z" fill="white"/>
+    </svg>
+
+
+
+                        </div>
+                        <div f21112 ff fw>
+                            Avatars
+                        </div>
+                    </div>
+                    <div click page="create-account" f2111 ff fw>
+                        <div f21111 ff fw>
+
+
+
+
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 3C10.745 2.99978 9.52153 3.3931 8.50176 4.1246C7.48199 4.85609 6.71727 5.88894 6.31521 7.07779C5.91315 8.26664 5.89399 9.55164 6.26044 10.7519C6.62689 11.9522 7.36049 13.0074 8.358 13.769C5.814 14.907 4 17.208 4 20C4 20.2652 4.10536 20.5196 4.29289 20.7071C4.48043 20.8946 4.73478 21 5 21H19C19.2652 21 19.5196 20.8946 19.7071 20.7071C19.8946 20.5196 20 20.2652 20 20C20 17.208 18.186 14.907 15.642 13.769C16.6395 13.0074 17.3731 11.9522 17.7396 10.7519C18.106 9.55164 18.0869 8.26664 17.6848 7.07779C17.2827 5.88894 16.518 4.85609 15.4982 4.1246C14.4785 3.3931 13.255 2.99978 12 3V3Z" fill="white"/>
+                                </svg>
+
+
+
+
+                        </div>
+                        <div f21112 ff fw>
+                            Create Account
                         </div>
                     </div>
                     <div f2111-l mt2 ff fw class="f2111-l">
@@ -641,14 +825,35 @@
 
                 </div>
 
-                <div ff aa fw nnn f212 class="f212">
+                <div ff aa fw f212 class="f212">
 
                 </div>
 
             </div>
 
             <div f22 ff aa fw class="f22">
+                <div f221 ff aa fw class="f221" displayPage page="banners">
+                    <div f2211 ff fw class="f2211">
+                        <div f22112-bn ff fw class="f22112">
 
+
+                        </div>
+                        <div f22112-bnl ff fw class="f22113xl">
+                            More
+                        </div>
+                    </div>
+                </div>
+                <div f221 ff aa fw class="f221" displayPage page="pfps">
+                    <div f2211 ff fw class="f2211">
+                        <div f22112-pfps ff fw class="f22112">
+
+
+                        </div>
+                        <div f22112-pfpsx ff fw class="f22113xl">
+                            More
+                        </div>
+                    </div>
+                </div>
                 <div f221 ff aa fw class="f221" displayPage page="search">
                     <div f2211 ff fw class="f2211">
                         <div f22111 ff rr fw class="f22111">
@@ -660,12 +865,13 @@
                                     Find things based on animes!
                                 </div>
                                 <div f221112110 ff fw class="f221112110">
-                                    here's a tip.. to find anime,manga or banner use... /anime,/g for gif or /b for banner
+                                    here's a tip.. to find anime,manga or banner use... /a for anime,/g for gif or /b for banner
                                 </div>
-                                <input value="/a sword art online" placeholder="Try doing /b sword art online" f22111-i ff fw class="f22111-i" type="text">
+                                <input value="/n joti" placeholder="Try doing /b sword art online" f22111-i ff fw class="f22111-i" type="text">
                             </div>
                         </div>
                         <div f22112 ff fw class="f22112">
+
 
 
                         </div>
@@ -712,6 +918,9 @@
 
                     </div>
                 </div>
+                <div f222 ff aa fw class="f222" displayPage page="ytvideo">
+
+                </div>
             </div>
 
         </div>
@@ -719,11 +928,149 @@
     </div>
 
 
-
-
     <script>
-        //// custom function ///
+    </script>
+    <script>
+        const apiKey = 'AIzaSyBHxsdlhc2DuB8EPtl8LF5My3J31RCG3TE';
+        // 3. This function creates an <iframe> (and YouTube player)
+        //    after the API code downloads.
 
+        $(document).on('click', '[MusixButton]', function() {
+            if ($(this).attr('type') == 'stop') {
+                pauseVideo = () => {
+                    let iframe = $('[id="player"]')
+                    iframe.each((index) => {
+                        iframe[index].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+                    })
+                };
+                pauseVideo()
+                $(this).attr('type', 'play')
+                $(this).html('<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><g><rect fill="none" height="24" width="24"/></g><g><path d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M9.5,14.67V9.33c0-0.79,0.88-1.27,1.54-0.84 l4.15,2.67c0.61,0.39,0.61,1.29,0,1.68l-4.15,2.67C10.38,15.94,9.5,15.46,9.5,14.67z"/></g></svg>');
+            } else if ($(this).attr('type') == 'replay') {
+                playVideo = () => {
+                    let iframe = $('[id="player"]')
+                    iframe.each((index) => {
+                        iframe[index].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
+                    })
+                };
+                playVideo()
+                $(this).attr('type', 'stop')
+                $(this).html('<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M10,16L10,16c-0.55,0-1-0.45-1-1V9 c0-0.55,0.45-1,1-1l0,0c0.55,0,1,0.45,1,1v6C11,15.55,10.55,16,10,16z M14,16L14,16c-0.55,0-1-0.45-1-1V9c0-0.55,0.45-1,1-1l0,0 c0.55,0,1,0.45,1,1v6C15,15.55,14.55,16,14,16z"/></g></g></svg>');
+            } else {
+                playVideo = () => {
+                    let iframe = $('[id="player"]')
+                    iframe.each((index) => {
+                        iframe[index].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
+                    })
+                };
+                playVideo()
+                $(this).attr('type', 'stop')
+                $(this).html('<svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M10,16L10,16c-0.55,0-1-0.45-1-1V9 c0-0.55,0.45-1,1-1l0,0c0.55,0,1,0.45,1,1v6C11,15.55,10.55,16,10,16z M14,16L14,16c-0.55,0-1-0.45-1-1V9c0-0.55,0.45-1,1-1l0,0 c0.55,0,1,0.45,1,1v6C15,15.55,14.55,16,14,16z"/></g></g></svg>');
+            }
+
+        })
+        $('.close').click(() => {
+            stopIframeVideo()
+        });
+        $(document).on('click', '[ytvideo]', function() {
+            $('[id="player"]').remove();
+            $('[class="f2122"]').remove();
+            $('[flooo]').remove()
+            const href = $(this).attr('href');
+            const videoId = href;
+            const url = 'https://www.googleapis.com/youtube/v3/videos';
+            const data = {
+                'key': apiKey,
+                'part': 'snippet',
+                'id': href,
+            };
+            $.get(url, data, function(e) {
+                const x = e.items[0].snippet;
+                const channelId = x.channelId;
+                const videoTitle = x.title;
+                const videoDescription = x.description;
+                const videoThumbnails = x.thumbnails.maxres.url;
+                const videoId = href;
+
+                const url = 'https://www.googleapis.com/youtube/v3/channels';
+                const data = {
+                    'key': apiKey,
+                    'part': 'snippet',
+                    'id': channelId,
+                };
+                $.get(url, data, function(e) {
+                    const x = e.items[0].snippet;
+                    const channelName = x.title;
+                    const channelAvatar = x.thumbnails.high.url;
+                    const dataxxx = '';
+                    const data =
+                        `<scr${dataxxx}ipt flooo src="http://www.youtube.com/iframe_api"></scr${dataxxx}ipt><iframe id="player" src="https://www.youtube.com/embed/${href}?controls=0&autoplay=1&enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                        <div ff fw rr class="f2122">
+        <div style="background-image:url(${channelAvatar})" fbg ff fw rr class="f21221">
+
+        </div>
+        <div ff fw rr class="f21222">
+            <div ff fw rr class="f212221">
+          ${channelName}
+        </div>
+        <div ff fw rr class="f212222">
+            ${videoTitle}
+        </div>
+        </div>
+        <div MusixButton type="stop" ff fw rr class="f21221">
+
+            <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><g><rect fill="none" height="24" width="24"/></g><g><g><path d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M10,16L10,16c-0.55,0-1-0.45-1-1V9 c0-0.55,0.45-1,1-1l0,0c0.55,0,1,0.45,1,1v6C11,15.55,10.55,16,10,16z M14,16L14,16c-0.55,0-1-0.45-1-1V9c0-0.55,0.45-1,1-1l0,0 c0.55,0,1,0.45,1,1v6C15,15.55,14.55,16,14,16z"/></g></g></svg>
+            
+        </div>
+    </div>`;
+                    $('[f212]').append(data);
+
+
+
+
+                    window.onYouTubeIframeAPIReady = function() {
+                        new YT.Player('player', {
+                            events: {
+                                'onStateChange': onPlayerStateChange
+                            }
+                        });
+                    };
+                    var time;
+
+                    function onPlayerStateChange(event) {
+                        if (event.data == YT.PlayerState.ENDED) {
+                            console.log('done')
+                        }
+                    }
+                });
+            });
+
+
+        })
+        $(document).on(
+            'mouseover',
+            '[tippyx]',
+            function() {
+
+                tippy('[tippyx]', {
+                    inertia: true,
+                    hideOnClick: false,
+                    interactive: true,
+                    placement: 'bottom',
+
+                    offset: [0, 10],
+                    delay: 0,
+                    zIndex: 9999,
+                    duration: 0,
+                    appendTo: () => document.body,
+                    animateFill: false,
+                    theme: 'tomatoxx',
+                    maxWidth: 144,
+                })
+
+            }
+        );
 
         function isEmpty(el) {
             return !$.trim(el.html())
@@ -744,6 +1091,184 @@
                 }
             }
         )
+        $(document).on('click', '[f22112-pfpsx]', function() {
+            const page = $(this).attr('page');
+            const totalpg = Number(page) + 1;
+            console.log(totalpg)
+            $.getJSON('https://pfps.glitch.me/?p=' + totalpg, function(api) {
+                console.log(api)
+                $.each(api, function(o, v) {
+
+
+                    if (typeof v.page == 'undefined') {} else {
+                        console.log(v.page)
+                        $('[f22112-pfpsx]').attr('page', v.page).text('More')
+                    }
+
+                    $.each(v, function(o, v) {
+
+                        if (typeof v.alt == 'undefined') {} else if (typeof v.img == 'undefined') {
+
+                        } else {
+                            console.log(v)
+                            const data =
+                                `<div ff class="avatar-FDgdefv5">
+    <img oid="1" src="${v.img}" alt="">
+    <div oid="2" fbg style="background-image: url(${v.img});" alt=""></div>
+</div>`;
+
+                            $('[f22112-pfps]').append(data)
+
+                            var cw = $('.avatar-FDgdefv5').width();
+                            $('.avatar-FDgdefv5').css({
+                                'height': cw + 'px'
+                            });
+                            $(window).on('resize', function() {
+                                var cw = $('.avatar-FDgdefv5').width();
+                                $('.avatar-FDgdefv5').css({
+                                    'height': cw + 'px'
+                                });
+                            });
+                        }
+
+                    })
+
+
+                })
+            })
+
+        })
+        $(document).on('click', '[click][page="pfps"]', function() {
+            if (!$.trim($('[f22112-pfps]').html()).length) {
+                $.getJSON('https://pfps.glitch.me/?p=0', function(api) {
+                    $('.loader').remove()
+                    console.log(api)
+                    $.each(api, function(o, v) {
+
+
+                        if (typeof v.page == 'undefined') {} else {
+                            console.log(v.page)
+                            $('[f22112-pfpsx]').attr('page', v.page).text('More')
+                        }
+
+                        $.each(v, function(o, v) {
+
+                            if (typeof v.alt == 'undefined') {} else if (typeof v.img == 'undefined') {
+
+                            } else {
+                                console.log(v)
+                                const data =
+                                    `<div ff class="avatar-FDgdefv5">
+    <img oid="1" src="${v.img}" alt="">
+    <div oid="2" fbg style="background-image: url(${v.img});" alt=""></div>
+    <div aa oid="3">Set Avatar</div>
+</div>`;
+
+                                $('[f22112-pfps]').append(data)
+
+                                var cw = $('.avatar-FDgdefv5').width();
+                                $('.avatar-FDgdefv5').css({
+                                    'height': cw + 'px'
+                                });
+                                $(window).on('resize', function() {
+                                    var cw = $('.avatar-FDgdefv5').width();
+                                    $('.avatar-FDgdefv5').css({
+                                        'height': cw + 'px'
+                                    });
+                                });
+
+                            }
+
+                        })
+
+
+                    })
+                })
+
+            }
+
+        })
+
+        $(document).on('click', '[f22112-bnl]', function() {
+            const page = $(this).attr('page');
+            const totalpg = Number(page) + 1;
+            console.log(totalpg)
+            $.getJSON('https://banners-api.animekeyo.com/?p=' + totalpg, function(api) {
+                console.log(api)
+                $.each(api, function(o, v) {
+
+
+                    if (typeof v.page == 'undefined') {} else {
+                        console.log(v.page)
+                        $('[f22112-bnl]').attr('page', v.page).text('More')
+                    }
+
+                    $.each(v, function(o, v) {
+
+                        if (typeof v.alt == 'undefined') {} else if (typeof v.img == 'undefined') {
+
+                        } else {
+                            console.log(v)
+                            const data =
+                                `<div style="background-image:url(${v.img})" iteam="anime-banners" fbg f221121z rr ff fw class="f221121z">
+                            <div download-banner href="${v.img}" f221121s aa ff fw class="f221121s">
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M31.9021 53.8696L54.1538 25.6421C55.0028 24.5653 54.815 23.0061 53.7344 22.1599C53.296 21.8166 52.7547 21.6299 52.1971 21.6299H42.3869V6.74945C42.3869 5.3797 41.2729 4.26937 39.8987 4.26937L19.9924 4.26937C18.6181 4.26937 17.5041 5.3797 17.5041 6.74945V21.6299H7.69404C6.31976 21.6299 5.20576 22.7402 5.20576 24.1099C5.20576 24.6657 5.39287 25.2051 5.73725 25.6421L27.989 53.8696C28.838 54.9466 30.4021 55.1338 31.4828 54.2875C31.6388 54.1654 31.7796 54.0251 31.9021 53.8696Z" fill="white"/> </svg>
+                            </div>
+                            <div f221121s-tt tippyx data-tippy-content="${v.alt}" aa ff fw class="f221121s-tt">
+                                ${v.alt}
+                            </div>
+                            </div>`;
+                            $('[f22112-bn]').append(data)
+                        }
+
+                    })
+
+
+                })
+            })
+
+        })
+        $(document).on('click', '[click][page="banners"]', function() {
+            if (!$.trim($('[f22112-bn]').html()).length) {
+                $.getJSON('https://banners-api.animekeyo.com/?p=0', function(api) {
+                    $('.loader').remove()
+                    console.log(api)
+                    $.each(api, function(o, v) {
+
+
+                        if (typeof v.page == 'undefined') {} else {
+                            console.log(v.page)
+                            $('[f22112-bnl]').attr('page', v.page).text('More')
+                        }
+
+                        $.each(v, function(o, v) {
+
+                            if (typeof v.alt == 'undefined') {} else if (typeof v.img == 'undefined') {
+
+                            } else {
+                                console.log(v)
+                                const data =
+                                    `<div style="background-image:url(${v.img})" iteam="anime-banners" fbg f221121z rr ff fw class="f221121z">
+                            <div download-banner href="${v.img}" f221121s aa ff fw class="f221121s">
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M31.9021 53.8696L54.1538 25.6421C55.0028 24.5653 54.815 23.0061 53.7344 22.1599C53.296 21.8166 52.7547 21.6299 52.1971 21.6299H42.3869V6.74945C42.3869 5.3797 41.2729 4.26937 39.8987 4.26937L19.9924 4.26937C18.6181 4.26937 17.5041 5.3797 17.5041 6.74945V21.6299H7.69404C6.31976 21.6299 5.20576 22.7402 5.20576 24.1099C5.20576 24.6657 5.39287 25.2051 5.73725 25.6421L27.989 53.8696C28.838 54.9466 30.4021 55.1338 31.4828 54.2875C31.6388 54.1654 31.7796 54.0251 31.9021 53.8696Z" fill="white"/> </svg>
+                            </div>
+                            <div f221121s-tt tippyx data-tippy-content="${v.alt}" aa ff fw class="f221121s-tt">
+                                ${v.alt}
+                            </div>
+                            </div>`;
+                                $('[f22112-bn]').append(data)
+                            }
+
+                        })
+
+
+                    })
+                })
+
+            }
+
+        })
+
         $(document).on(
                 'click',
                 '[anime-view]',
@@ -858,6 +1383,91 @@
             const daat = $(this).val();
 
             if (e.which == 13) {
+
+                if ($(this).val().indexOf('/n ') >= 0) {
+                    const datax = daat.replace('/n ', '');
+                    $('[iteam="anime-searchs"]').remove()
+
+                    const page_no = 0;
+                    const url = 'https://www.googleapis.com/youtube/v3/search';
+                    const data = {
+                        'key': apiKey,
+                        'maxResults': 50,
+                        'type': 'video',
+                        'page': page_no,
+                        'order': 'relevance',
+                        'q': 'Nightcore ' + datax,
+                    };
+
+
+                    $.get(url, data, function(e) {
+
+                        $.each(e.items, function(o, v) {
+                            const videoId = v.id.videoId;
+                            const url = 'https://www.googleapis.com/youtube/v3/videos';
+                            const data = {
+                                'key': apiKey,
+                                'part': 'snippet',
+                                'id': videoId,
+                            };
+                            $.get(url, data, function(e) {
+                                const x = e.items[0].snippet;
+                                const channelId = x.channelId;
+                                const videoTitle = x.title;
+                                const videoDescription = x.description;
+                                const videoThumbnails = x.thumbnails.maxres.url;
+                                const videoId = v.id.videoId;
+
+                                const url = 'https://www.googleapis.com/youtube/v3/channels';
+                                const data = {
+                                    'key': apiKey,
+                                    'part': 'snippet',
+                                    'id': channelId,
+                                };
+                                $.get(url, data, function(e) {
+                                    const x = e.items[0].snippet;
+                                    const channelName = x.title;
+                                    const channelAvatar = x.thumbnails.high.url;
+
+
+
+                                    const data = ` <div ytvideo href="${videoId}" iteam="anime-searchs" rr ff fw class="f221121nn1">
+                                <img style="display:none" ff fw fbg class="f221121nn2 gioi${videoId}" src="${videoThumbnails}">
+                                <img style="filter: opacity(0.03);" src="${videoThumbnails}" ff fw fbg class="f221121nn2 gioil${videoId}">
+                                <div ff fw class="f221121nn3">
+                                    ${videoTitle}
+                                </div>
+                                <div class="f1123x45di" ff aa>
+Follow
+</div>
+                                <div ff fw class="f221121nn4">
+                                    <div fbg style="background-image: url(${channelAvatar});" ff fw class="f221121nn41">
+
+                                    </div>
+                                    <div ff fw class="f221121nn42">
+                                        ${channelName}
+                                    </div>
+                                </div>
+                            </div>`;
+
+
+                                    $('[f22112]').append(data)
+
+                                    $('.gioi' + videoId).imagesLoaded({
+                                            // options...
+                                        },
+                                        function() {
+                                            $('.gioil' + videoId).css('display', 'none')
+                                            $('.gioi' + videoId).fadeIn()
+
+
+                                        }
+                                    );
+                                })
+                            })
+                        })
+                    })
+                }
                 if ($(this).val().indexOf('/a ') >= 0) {
                     const data = daat.replace('/a ', '');
                     $('[iteam="anime-searchs"]').remove()
@@ -1060,7 +1670,7 @@
             'click',
             '[f2111]',
             function() {
-                $('[f2111]').css('background-color', 'var(--r5)').css('margin', '0rem');
+                $('[f2111]').css('background-color', 'var(--r10)').css('margin', '0rem');
                 $(this).css('background-color', '#5865f2').css('margin', '0.3rem 0rem');
 
                 $("input[if211]").val('')
