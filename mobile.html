@@ -7,11 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!---//////////////////////////------jquery------/////////////////////////--->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
-    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.css">
-    <script src="https://unpkg.com/onsenui/js/onsenui.js"></script>
+    <script src="/scripts/jquery.js"></script>
+
     <script>
         $.ajax({
             url: '/index.html?clear-231',
@@ -20,77 +18,108 @@
                 $('style[ux]').html(body)
             }
         });
+
+        function a(inn, id, clas) {
+            if (inn, id) {
+                aa = $(`<${inn}   ${id} class="m${clas}"></${inn}>`);
+            } else if (inn) {
+                aa = $(`<${inn}></${inn}>`);
+            }
+            return aa
+        };
+
+        function srcx(inn, id, clas, src) {
+            if (inn, id) {
+                aa = $(`<${inn}  ${id} src="${src}" class="m${clas}">`);
+            }
+            return aa
+        };
+
+        function sh(dsfvf) {
+            $(dsfvf).css({
+                'height': $(dsfvf).width() + 'px'
+            })
+            $(window).on('resize', function() {
+                $(dsfvf).css({
+                    'height': $(dsfvf).width() + 'px'
+                })
+            })
+        }
+
+        function sw(dsfvf) {
+            $(dsfvf).css({
+                'width': $(dsfvf).height() + 'px'
+            })
+            $(window).on('resize', function() {
+                $(dsfvf).css({
+                    'width': $(dsfvf).height() + 'px'
+                })
+            })
+        }
     </script>
     <style ux>
 
+    </style>
+    <style mi>
+        .m1 {
+            display: grid;
+            grid-gap: 10px;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        }
     </style>
 </head>
 
 <body>
 
-    <ons-splitter>
-        <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
-            <ons-page>
-                <ons-list main-menu>
-
-
-                </ons-list>
-            </ons-page>
-        </ons-splitter-side>
-        <ons-splitter-content id="content" page="about.html"></ons-splitter-content>
-    </ons-splitter>
-
-
-
-    <template id="about.html">
-        <ons-page>
-         <p>Working</p>
-        </ons-page>
-      </template>
 
     <script>
-        $(document).on(
-            'click',
-            '[f2111]',
-            function() {
-                $('[f2111]').css('background-color', 'var(--r10)').css('margin', '0rem');
-                $(this).css('background-color', '#5865f2').css('margin', '0.3rem 0rem');
+        // sh('class')
+        // a('div','id','class')
+        // srcx('img','id','class','src') 
 
-                $("input[if211]").val('')
-                $('[f2111-l][mt2]').show();
-                $('[f211] div[f2111]').show();
-                $('[iteam="anime-view"]').remove()
-                    // to trigger data after clicking to the button exp.. unhide the profile page after clicking and hiding the rest
-                $('[displayPage]').hide()
-                $('[displayPage][page="' + $(this).attr('page') + '"]').show()
-                if ($('[click][page="anime"]').attr('display') == 'show') {
-                    $('[click][page="anime"]').show()
-                } else {
-                    $('[click][page="anime"]').hide()
-                }
+        $('body').prepend(
+            a('div', 'rr fw', '1').css('margin', '15px').prepend(
+                ''
+
+            ).ready(function() {
+                $.getJSON('https://pfps.glitch.me/?p=0', function(api) {
+
+                    $.each(api, function(o, v) {
+                        $.each(v, function(o, v) {
+                            console.log(v)
+                            if (v.img) {
+                                $('.m1').prepend(
+                                    a('div', 'ff rr fw', '11 m12x').prepend(
+                                        a('div', 'ff aa fw fbg ', '12x m111')
+                                        .css('padding', '100px')
+                                        .css('top', '-50%')
+                                        .css('left', '-50%')
+                                        .css('filter', 'blur(30px)')
+                                        .css('background-image', 'url(' + v.img + ')'),
+                                        a('div', 'ff rr fw fbg ', '112')
+                                        .css('background-image', 'url(' + v.img + ')')
+                                        .css('margin', '30px')
+                                        .css('border-radius', '100rem'),
+                                    )
+                                    .css('overflow', 'hidden')
+                                    .css('background-color', 'var(--r11)')
+                                    .css('border-radius', '5px').ready(function() {
+                                        sh('.m12x')
+                                        sw('.m111')
+
+                                    })
+                                )
+                            } else {
+
+                            }
+
+
+                        })
+                    })
+                })
             })
-        window.fn = {};
 
-        window.fn.open = function() {
-            var menu = document.getElementById('menu');
-            menu.open();
-        };
-
-        window.fn.load = function(page) {
-            var content = document.getElementById('content');
-            var menu = document.getElementById('menu');
-            content.load(page)
-                .then(menu.close.bind(menu));
-        };
-        $('[main-menu]').ready(function() {
-            $.ajax({
-                url: '/index.html?clear-231',
-                success: function(data) {
-                    var body = data.substring(data.indexOf('<div f21 ff aa fw class="f21">') + 30, data.indexOf("</div dnx>"));
-                    $('[main-menu]').html(body)
-                }
-            });
-        })
+        )
     </script>
 </body>
 
