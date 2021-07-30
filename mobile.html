@@ -173,7 +173,14 @@
                 data.onDisconnect().update({
                     State: false,
                 });
-                data.once("value", snapshot => {
+                data.on("value", snapshot => {
+
+                    if (typeof snapshot.val().avatar == "undefined") {
+
+                    } else {
+
+                        $('[mainava]').css('background-image', 'url(' + snapshot.val().avatar + ')')
+                    }
 
                     if (typeof snapshot.val().displayName == "undefined") {
                         async function myFunction() {
@@ -197,12 +204,21 @@
                         console.log(snapshot.val())
                     }
                 })
-                $('.m31').remove()
+                $('.m3').css('display', 'none')
+                $(document).on('click', '[set-avatar]', function() {
+                    const href = $(this).attr('href')
+                    if (href) {
+                        data.update({
+                            avatar: href,
+                        });
+                    }
+                })
             } else {
                 // User is signed out.
                 console.log('No')
                 setTimeout(
                     function name(params) {
+                        $('.m3').css('display', 'flex')
                         $('.m3').prepend(a('div', 'fw ff aa fbg', '31')
                             .css('background', 'var(--r5)')
                             .css('justify-content', 'flex-end')
@@ -266,12 +282,12 @@
                             br: '',
                         }, {
                             img: '',
-                            name: '',
+                            name: 'mainava',
                             color: 'rgb(88, 101, 242)',
                             br: '100rem',
                         }]
                         $.each(data, function(v, o) {
-                            const data = a('div', 'fw fbg ff', '21')
+                            const data = a('div', 'fw fbg ff ' + o.name + '', '21')
                                 .prepend(
                                     ''
                                 )
@@ -308,6 +324,17 @@
                                             .css('background-image', 'url(' + v.img + ')')
                                             .css('margin', '30px')
                                             .css('border-radius', '100rem'),
+                                            a('div', 'ff aa set-avatar href="' + v.img + '"').text('Set Avatar')
+                                            .css('background-color', 'rgb(88, 101, 242)')
+                                            .css('bottom', '0')
+                                            .css('left', 'unset')
+                                            .css('top', 'unset')
+                                            .css('right', '0')
+                                            .css('padding', '5px ​9px')
+                                            .css('font-size', '10px')
+                                            .css('text-transform', 'uppercase')
+                                            .css('margin', '8px')
+                                            .css('border-radius', '36px')
                                         )
                                         .css('overflow', 'hidden')
                                         .css('background-color', 'var(--r11)')
