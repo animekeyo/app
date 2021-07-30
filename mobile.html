@@ -6,9 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!---//////////////////////////------jquery------/////////////////////////--->
-
     <script src="/scripts/jquery.js"></script>
+    <!---//////////////////////////------jquery------/////////////////////////--->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script>
+        var SUPABASE_URL = 'https://srdaietqaprjhpuwovbv.supabase.co';
+        var SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTYyNDgwOTQxMiwiZXhwIjoxOTQwMzg1NDEyfQ.yBwqUvBsIY3pbITcKgZ99jlEnVfDOhJDOQ6-hHKdaqY';
+
+        var supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY)
+    </script>
+
 
     <script>
         $.ajax({
@@ -76,8 +83,49 @@
         // sh('class')
         // a('div','id','class')
         // srcx('img','id','class','src') 
+        // .css('','')
+        const session = supabase.auth.session()
+        if (session) {
+            const avatar = session.user.user_metadata.avatar_url
+            $('.m21').css('background-image', 'url(' + session.user.user_metadata.avatar_url + ')');
+            const name = session.user.user_metadata.full_name
+            const email = session.user.email
+            console.log(avatar)
+        } else {
 
+        }
         $('body').prepend(
+            a('div', 'fw ff', '2').prepend(
+                a('div', 'fw fbg ff', '21')
+                .prepend(
+                    ''
+                )
+                .css('background-color', 'rgb(88, 101, 242)')
+                .css('border-radius', '100rem')
+                .css('width', '40px')
+                .css('background-image', 'url(' + session.user.user_metadata.avatar_url + ')')
+                .ready(
+                    function name(params) {
+
+                        setTimeout(
+                            function name(params) {
+                                sw('.m21')
+                            }, 0050
+                        )
+                    }
+                )
+            )
+            .css('position', 'fixed')
+            .css('bottom', '0')
+            .css('left', '0')
+            .css('height', '40px')
+            .css('padding', '10px')
+            .css('background', 'var(--r1)')
+            .css('z-index', '1').ready(
+                function name(params) {
+                    $('body').css('margin-bottom', '75px')
+                }
+            ),
             a('div', 'rr fw', '1').css('margin', '15px').prepend(
                 ''
 
@@ -86,7 +134,7 @@
 
                     $.each(api, function(o, v) {
                         $.each(v, function(o, v) {
-                            console.log(v)
+
                             if (v.img) {
                                 $('.m1').prepend(
                                     a('div', 'ff rr fw', '11 m12x').prepend(
