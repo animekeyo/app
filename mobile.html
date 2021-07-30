@@ -95,71 +95,103 @@
 
         }
         $('body').prepend(
-            a('div', 'fw ff', '2').prepend(
-                a('div', 'fw fbg ff', '21')
-                .prepend(
+                a('div', 'fw ff', '2').prepend(
                     ''
                 )
-                .css('background-color', 'rgb(88, 101, 242)')
-                .css('border-radius', '100rem')
-                .css('width', '30px')
-                .css('background-image', 'url()')
-
-            )
-            .css('position', 'fixed')
-            .css('bottom', '0')
-            .css('left', '0')
-            .css('height', '30px')
-            .css('padding', '10px')
-            .css('background', 'var(--r5)')
-            .css('z-index', '1').ready(
-                function name(params) {
-                    $('body').css('margin-bottom', '75px')
-                }
-            ),
-            a('div', 'rr fw', '1').css('margin', '15px').prepend(
-                ''
-
-            ).ready(function() {
-                $.getJSON('https://pfps.glitch.me/?p=0', function(api) {
-
-                    $.each(api, function(o, v) {
-                        $.each(v, function(o, v) {
-
-                            if (v.img) {
-                                $('.m1').prepend(
-                                    a('div', 'ff rr fw', '11 m12x').prepend(
-                                        srcx('img', 'ff nnn', 'idd', v.img),
-                                        a('div', 'ff aa fw fbg ', '12x m111')
-                                        .css('padding', '100px')
-                                        .css('top', '-50%')
-                                        .css('left', '-50%')
-                                        .css('filter', 'blur(30px)')
-                                        .css('background-image', 'url(' + v.img + ')'),
-                                        a('div', 'ff rr fw fbg ', '112')
-                                        .css('background-image', 'url(' + v.img + ')')
-                                        .css('margin', '30px')
-                                        .css('border-radius', '100rem'),
-                                    )
-                                    .css('overflow', 'hidden')
-                                    .css('background-color', 'var(--r11)')
-                                    .css('border-radius', '5px').ready(function() {
-                                        sh('.m12x')
-                                        sw('.m111')
-
-                                    })
+                .css('position', 'fixed')
+                .css('bottom', '0')
+                .css('left', '0')
+                .css('height', '30px')
+                .css('padding', '20px')
+                .css('background', 'var(--r5)')
+                .css('flex-direction', 'row')
+                .css('justify-content', 'space-between')
+                .css('z-index', '1').ready(
+                    function name(params) {
+                        $('body').css('margin-bottom', '75px')
+                        const data = [{
+                            img: 'https://cdn.discordapp.com/attachments/399102162459688960/870645564621062184/EmojiSymbolsCategory_2acc53c1a6b1d999f2a5ca4c059d9d12_1.png',
+                            name: '',
+                            color: '',
+                            br: '',
+                        }, {
+                            img: 'https://cdn.discordapp.com/attachments/399102162459688960/870645884076052530/Search_f1f1aa5058bd080628dda43c042a9aba.png',
+                            name: '',
+                            color: '',
+                            br: '',
+                        }, {
+                            img: 'https://cdn.discordapp.com/attachments/399102162459688960/870645552629551164/PlusCircle_31499eef2b3ba2b92003ae6d0ec838a1.png',
+                            name: '',
+                            color: '',
+                            br: '',
+                        }, {
+                            img: 'https://cdn.discordapp.com/attachments/399102162459688960/870645575891173446/Bell_3d990f6114a0fd6f02165f5c7a05c77f.png',
+                            name: '',
+                            color: '',
+                            br: '',
+                        }, {
+                            img: '',
+                            name: '',
+                            color: 'rgb(88, 101, 242)',
+                            br: '100rem',
+                        }]
+                        $.each(data, function(v, o) {
+                            const data = a('div', 'fw fbg ff', '21')
+                                .prepend(
+                                    ''
                                 )
-                            } else {
+                                .css('background-color', o.color)
+                                .css('border-radius', o.br)
+                                .css('width', '30px')
+                                .css('background-image', 'url(' + o.img + ')')
+                            $('.m2').append(data)
+                        })
+                    }
+                ),
+                a('div', 'rr fw', '1').css('margin', '15px').prepend(
+                    ''
 
-                            }
+                ).ready(function() {
+                    $.getJSON('https://pfps.glitch.me/?p=0', function(api) {
+
+                        $.each(api, function(o, v) {
+                            $.each(v, function(o, v) {
+
+                                if (v.img) {
+                                    $('.m1').prepend(
+                                        a('div', 'ff rr fw', '11 m12x').prepend(
+                                            srcx('img', 'ff nnn', 'idd', v.img),
+                                            a('div', 'ff aa fw fbg ', '12x m111')
+                                            .css('padding', '100px')
+                                            .css('top', '-50%')
+                                            .css('left', '-50%')
+                                            .css('filter', 'blur(30px)')
+                                            .css('background-image', 'url(' + v.img + ')'),
+                                            a('div', 'ff rr fw fbg ', '112')
+                                            .css('background-image', 'url(' + v.img + ')')
+                                            .css('margin', '30px')
+                                            .css('border-radius', '100rem'),
+                                        )
+                                        .css('overflow', 'hidden')
+                                        .css('background-color', 'var(--r11)')
+                                        .css('border-radius', '5px').ready(function() {
+                                            sh('.m12x')
+                                            sw('.m111')
+
+                                        })
+                                    )
+                                } else {
+
+                                }
 
 
+                            })
                         })
                     })
                 })
-            })
 
-        )
+            )
+            .css('background-color', 'var(--r7)')
     </script>
 </body>
 
