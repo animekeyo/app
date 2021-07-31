@@ -2,7 +2,7 @@
     "theme_color": "black",
     "background_color": "black",
     "display": "standalone",
-    "scope": "/",
+    "scope": "/mobile",
     "start_url": "/mobile",
     "name": "Anime Keyo",
     "short_name": "Anime Keyo",
