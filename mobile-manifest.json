@@ -6,6 +6,12 @@
     "start_url": "/mobile",
     "name": "Anime Keyo",
     "short_name": "Anime Keyo",
+    "android_package_name": "com.animekeyo.android",
+    "categories": [
+        "social",
+        "anime",
+        "gaming"
+    ],
     "description": "Anime App",
     "icons": [{
             "src": "/icon-192x192.png",
@@ -26,6 +32,25 @@
             "src": "/icon-512x512.png",
             "sizes": "512x512",
             "type": "image/png"
+        }
+    ],
+    "shortcuts": [{
+            "name": "Search",
+            "url": "/mobile?ll=search",
+            "icons": [{
+                "src": "/icon-192x192.png",
+                "type": "image/png",
+                "sizes": "192x192"
+            }]
+        },
+        {
+            "name": "Profile",
+            "url": "/mobile?ll=account",
+            "icons": [{
+                "src": "/icon-192x192.png",
+                "type": "image/png",
+                "sizes": "192x192"
+            }]
         }
     ]
 }
