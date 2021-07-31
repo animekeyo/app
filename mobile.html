@@ -291,6 +291,7 @@
                 setTimeout(
                     function name(params) {
                         $('.m3').css('display', 'flex')
+
                         $('.m3').prepend(a('div', 'fw ff aa fbg', '31')
                             .css('background', 'var(--r5)')
                             .css('justify-content', 'flex-end')
@@ -442,7 +443,8 @@
                 ),
                 a('div', 'rr fw pagex page="home"', '1').css('margin', '15px').prepend('').ready(function() {
                     $(document).on('click', '[discover-avatars]', function() {
-                        $('.m1').html('')
+
+                        $('.m1').html('').css('grid-template-columns', 'repeat(auto-fill, minmax(150px, 1fr))')
                         $.getJSON('https://pfps.glitch.me/?p=0', function(api) {
                             $.each(api, function(o, v) {
                                 $.each(v, function(o, v) {
@@ -474,30 +476,19 @@
 
                     })
                     $(document).on('click', '[discover-banners]', function() {
-                        $('.m1').html('')
+                        $('.m1').html('').css('grid-template-columns', 'repeat(auto-fill, minmax(350px, 1fr))')
                         $.getJSON('https://banners-api.animekeyo.com/?p=0', function(api) {
                             $.each(api, function(o, v) {
                                 $.each(v, function(o, v) {
                                     if (v.img) {
                                         $('.m1').append(
                                             a('div', 'ff rr fw', '11 m12x').prepend(
-                                                srcx('img', 'ff nnn', 'idd', v.img),
-                                                a('div', 'ff aa fw fbg ', '12x m111')
-                                                .css('padding', '100px')
-                                                .css('top', '-50%')
-                                                .css('left', '-50%')
-                                                .css('filter', 'blur(30px)')
-                                                .css('background-image', 'url(' + v.img + ')'),
-                                                a('div', 'ff rr fw fbg set-banner href="' + v.img + '"', '112')
-                                                .css('background-image', 'url(' + v.img + ')')
-                                                .css('margin', '30px')
-                                                .css('border-radius', '100rem'), )
+                                                srcx('img', 'ff fw set-avatar href="' + v.img + '"', 'idd', v.img))
                                             .css('overflow', 'hidden')
                                             .css('background-color', 'var(--r11)')
                                             .css('border-radius', '5px')
                                             .ready(function() {
-                                                sh('.m12x')
-                                                sw('.m111')
+
                                             }))
                                     } else {}
                                 })
