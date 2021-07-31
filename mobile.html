@@ -100,6 +100,18 @@
             width: -webkit-fill-available;
         }
         
+        .m1x1 {
+            padding: 1rem;
+            color: var(--c76);
+            background: var(--r15);
+            border-radius: 5px;
+        }
+        
+        .m1x {
+            margin: 10px;
+            gap: 10px;
+        }
+        
         button {
             padding: 1rem 1.2rem;
             background: var(--r10);
@@ -238,6 +250,14 @@
                     if (href) {
                         data.update({
                             avatar: href,
+                        });
+                    }
+                })
+                $(document).on('click', '[set-banner]', function() {
+                    const href = $(this).attr('href')
+                    if (href) {
+                        data.update({
+                            banner: href,
                         });
                     }
                 })
@@ -413,18 +433,74 @@
                     }
                 ),
                 ///Bottom Bar///
+                a('div', 'rr fw ff pagex page="home"', '1x').prepend(
+                    a('div', 'rr fw ff discover-avatars', '1x1').text('Load Avatars'),
+                    a('div', 'rr fw ff discover-banners', '1x1').text('Load Banners')
+                ),
                 a('div', 'rr fw pagex page="home"', '1').css('margin', '15px').prepend('').ready(function() {
-                    $.getJSON('https://pfps.glitch.me/?p=0', function(api) {
-                        $.each(api, function(o, v) {
-                            $.each(v, function(o, v) {
-                                if (v.img) {
-                                    $('.m1').prepend(a('div', 'ff rr fw', '11 m12x').prepend(srcx('img', 'ff nnn', 'idd', v.img), a('div', 'ff aa fw fbg ', '12x m111').css('padding', '100px').css('top', '-50%').css('left', '-50%').css('filter', 'blur(30px)').css('background-image', 'url(' + v.img + ')'), a('div', 'ff rr fw fbg set-avatar href="' + v.img + '"', '112').css('background-image', 'url(' + v.img + ')').css('margin', '30px').css('border-radius', '100rem'), ).css('overflow', 'hidden').css('background-color', 'var(--r11)').css('border-radius', '5px').ready(function() {
-                                        sh('.m12x')
-                                        sw('.m111')
-                                    }))
-                                } else {}
+                    $(document).on('click', '[discover-avatars]', function() {
+                        $('.m1').html('')
+                        $.getJSON('https://pfps.glitch.me/?p=0', function(api) {
+                            $.each(api, function(o, v) {
+                                $.each(v, function(o, v) {
+                                    if (v.img) {
+                                        $('.m1').append(
+                                            a('div', 'ff rr fw', '11 m12x').prepend(
+                                                srcx('img', 'ff nnn', 'idd', v.img),
+                                                a('div', 'ff aa fw fbg ', '12x m111')
+                                                .css('padding', '100px')
+                                                .css('top', '-50%')
+                                                .css('left', '-50%')
+                                                .css('filter', 'blur(30px)')
+                                                .css('background-image', 'url(' + v.img + ')'),
+                                                a('div', 'ff rr fw fbg set-avatar href="' + v.img + '"', '112')
+                                                .css('background-image', 'url(' + v.img + ')')
+                                                .css('margin', '30px')
+                                                .css('border-radius', '100rem'), )
+                                            .css('overflow', 'hidden')
+                                            .css('background-color', 'var(--r11)')
+                                            .css('border-radius', '5px')
+                                            .ready(function() {
+                                                sh('.m12x')
+                                                sw('.m111')
+                                            }))
+                                    } else {}
+                                })
                             })
                         })
+
+                    })
+                    $(document).on('click', '[discover-banners]', function() {
+                        $('.m1').html('')
+                        $.getJSON('https://banners-api.animekeyo.com/?p=0', function(api) {
+                            $.each(api, function(o, v) {
+                                $.each(v, function(o, v) {
+                                    if (v.img) {
+                                        $('.m1').append(
+                                            a('div', 'ff rr fw', '11 m12x').prepend(
+                                                srcx('img', 'ff nnn', 'idd', v.img),
+                                                a('div', 'ff aa fw fbg ', '12x m111')
+                                                .css('padding', '100px')
+                                                .css('top', '-50%')
+                                                .css('left', '-50%')
+                                                .css('filter', 'blur(30px)')
+                                                .css('background-image', 'url(' + v.img + ')'),
+                                                a('div', 'ff rr fw fbg set-banner href="' + v.img + '"', '112')
+                                                .css('background-image', 'url(' + v.img + ')')
+                                                .css('margin', '30px')
+                                                .css('border-radius', '100rem'), )
+                                            .css('overflow', 'hidden')
+                                            .css('background-color', 'var(--r11)')
+                                            .css('border-radius', '5px')
+                                            .ready(function() {
+                                                sh('.m12x')
+                                                sw('.m111')
+                                            }))
+                                    } else {}
+                                })
+                            })
+                        })
+
                     })
                 })
 
