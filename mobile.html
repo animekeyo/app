@@ -241,6 +241,24 @@
                 data.onDisconnect().update({
                     State: false,
                 });
+                data.once("value", snapshot => {
+                    if (snapshot.val().page) {
+                        $(document).ready(function() {
+                            $('[view-page][page="' + snapshot.val().page + '"]').trigger("click");
+                        });
+                    }
+                    $(document).on('click', '[view-page]', function() {
+                        const page = $(this).attr('page');
+
+                        if (page) {
+                            data.update({
+                                page: page,
+                            });
+                            $('body > div[pagex]').hide()
+                            $('[page="' + page + '"]').show()
+                        }
+                    })
+                })
                 data.on("value", snapshot => {
                     $(document).on('change', '#search-user-input', function() {
                         const val = $(this).val();
@@ -264,11 +282,7 @@
                             });
                         });
                     })
-                    if (snapshot.val().page) {
-                        $(document).ready(function() {
-                            $('[view-page][page="' + snapshot.val().page + '"]').trigger("click");
-                        });
-                    }
+
                     if (typeof snapshot.val().userid == "undefined") {
                         data.update({
                             userid: user.uid,
@@ -321,16 +335,7 @@
                         }
                     })
                     //
-                $(document).on('click', '[view-page]', function() {
-                    const page = $(this).attr('page');
-                    $('body > div[pagex]').hide()
-                    $('[page="' + page + '"]').show()
-                    if (page) {
-                        data.update({
-                            page: page,
-                        });
-                    }
-                })
+
                 $(document).on('click', '[get-user]', function() {
                     const userid = $(this).attr('userid')
                     if (userid) {
