@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="manifest" href="/mobile-manifest.json?clear-24d3">
+    <script src="https://www.simicart.com/pwa/generate-sw.js"></script>
     <title>Anime Keyo</title>
     <script src="/scripts/jquery.js"></script>
     <!---//////////////////////////------jquery------/////////////////////////--->
@@ -156,35 +157,7 @@
 
 <body>
 
-    <script>
-        // Initialize deferredPrompt for use later to show browser install prompt.
-        let deferredPrompt;
 
-        window.addEventListener('beforeinstallprompt', (e) => {
-            // Prevent the mini-infobar from appearing on mobile
-            e.preventDefault();
-            // Stash the event so it can be triggered later.
-            deferredPrompt = e;
-            // Update UI notify the user they can install the PWA
-            showInstallPromotion();
-            // Optionally, send analytics event that PWA install promo was shown.//
-            console.log(`'beforeinstallprompt' event was fired.`);
-        });
-        buttonInstall.addEventListener('click', async() => {
-            // Hide the app provided install promotion
-            hideInstallPromotion();
-            // Show the install prompt
-            deferredPrompt.prompt();
-            // Wait for the user to respond to the prompt
-            const {
-                outcome
-            } = await deferredPrompt.userChoice;
-            // Optionally, send analytics event with outcome of user choice
-            console.log(`User response to the install prompt: ${outcome}`);
-            // We've used the prompt, and can't use it again, throw it away
-            deferredPrompt = null;
-        });
-    </script>
     <script>
         const messaging = firebase.messaging();
 
