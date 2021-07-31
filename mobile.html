@@ -254,13 +254,14 @@
                     }
                 })
                 $(document).on('click', '[set-banner]', function() {
-                    const href = $(this).attr('href')
-                    if (href) {
-                        data.update({
-                            banner: href,
-                        });
-                    }
-                })
+                        const href = $(this).attr('href')
+                        if (href) {
+                            data.update({
+                                banner: href,
+                            });
+                        }
+                    })
+                    //
                 $(document).on('click', '[view-page]', function() {
                     const page = $(this).attr('page');
                     $('body > div[pagex]').hide()
