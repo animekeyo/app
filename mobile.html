@@ -250,7 +250,7 @@
                             console.log(data.val());
                             data.val().displayName
                             $('.m52').append(
-                                a('div', 'fw ff', '521').prepend(
+                                a('div', 'fw ff get-user userid="' + data.val().userid + '"', '521').prepend(
                                     a('div', 'fw fbg ff', '5211').prepend(
                                         ''
                                     ).css('background-image', 'url(' + data.val().avatar + ')'),
