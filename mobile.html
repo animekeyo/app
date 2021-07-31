@@ -45,6 +45,12 @@
             return aa
         };
 
+        function input(id, classx, type, auto, placeholder) {
+
+            aa = $(` <input  type="${type}" ${classx}  placeholder="${placeholder}" autocomplete="${auto}" id="${id}">`);
+            return aa
+        };
+
         function srcx(inn, id, clas, src) {
             if (inn, id) {
                 aa = $(`<${inn}  ${id} src="${src}" class="m${clas}">`);
@@ -121,6 +127,28 @@
             border: none;
             font-family: 'C1';
             width: -webkit-fill-available;
+        }
+        
+        .m5211 {
+            height: 40px;
+            border-radius: 100rem;
+            width: 40px;
+        }
+        
+        .m521 {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            padding: 1rem;
+            /* margin: 10px; */
+            gap: 15px;
+            border-radius: 10px;
+            background: var(--r15);
+        }
+        
+        .m52 {
+            margin: 1rem;
+            gap: 0.5rem;
         }
     </style>
 </head>
@@ -206,6 +234,28 @@
                     State: false,
                 });
                 data.on("value", snapshot => {
+                    $(document).on('change', '#search-user-input', function() {
+                        const val = $(this).val();
+                        $('.m52').html('')
+                        firebase.database().ref('/users').orderByChild('displayName').startAt(val).once("value", function(snapshot) {
+                            snapshot.forEach(function(data) {
+                                console.log(data.val());
+                                data.val().displayName
+                                $('.m52').prepend(
+                                    a('div', 'fw ff', '521').prepend(
+                                        a('div', 'fw fbg ff', '5211').prepend(
+                                            ''
+                                        ).css('background-image', 'url(' + data.val().avatar + ')'),
+                                        a('div', ' ff', '5212').prepend(
+                                            data.val().displayName
+                                        )
+                                    )
+                                )
+
+
+                            });
+                        });
+                    })
                     if (snapshot.val().page) {
                         $(document).ready(function() {
                             $('[view-page][page="' + snapshot.val().page + '"]').trigger("click");
@@ -213,6 +263,11 @@
                     } else {
                         $(document).ready(function() {
                             $('[view-page][page="home"]').trigger("click");
+                        });
+                    }
+                    if (typeof snapshot.val().userid == "undefined") {
+                        data.update({
+                            userid: user.uid,
                         });
                     }
                     if (typeof snapshot.val().avatar == "undefined") {
@@ -310,11 +365,22 @@
         $('body').prepend(
 
 
-                $('body').prepend(a('div', 'fw ff fbg pagex page="account"', '4')
+                $('body').prepend(
+                    a('div', 'fw ff fbg pagex page="search"', '5').css('display', 'none').prepend(
+                        a('div', 'fw ff fbg', '51').prepend(
+                            a('div', 'fw ff fbg', '51').prepend(
+                                input('search-user-input', 'ff fw', 'text', '', 'Search user').html('')
+                            ),
+                            a('div', 'fw ff fbg', '52').prepend(
+                                ''
+                            )
+                        )
+                    ),
+                    a('div', 'fw ff fbg pagex page="account"', '4')
                     .css('display', 'none')
                     .prepend(
                         a('div', 'fw ff rr fbg', '41')
-                        .css('height', '14rem')
+                        .css('height', '12rem')
 
                         .css('align-items', 'flex-start')
                         .css('justify-content', 'flex-start')
@@ -323,7 +389,7 @@
                             // Profile Page Banner
                             a('div', 'fw ff rr fbg ', '411')
                             .css('background', 'var(--r10)')
-                            .css('height', '11rem')
+                            .css('height', '9rem')
                             .css('overflow', 'hidden')
 
                             .prepend(
@@ -367,11 +433,11 @@
                             )
                             .css('align-items', 'flex-start')
                             .css('justify-content', 'flex-start')
-                            .css('margin', '20px 20px')
+                            .css('margin', '10px 20px')
                         )
                     )),
                 ///Login Acces///
-                a('div', 'fw ff fbg pagex', '3')
+                a('div', 'fw ff fbg pagex', '3').css('display', 'none')
                 .prepend(
 
                     ''
@@ -441,7 +507,7 @@
                     a('div', 'rr fw ff discover-avatars', '1x1').text('Load Avatars'),
                     a('div', 'rr fw ff discover-banners', '1x1').text('Load Banners')
                 ),
-                a('div', 'rr fw pagex page="home"', '1').css('margin', '15px').prepend('').ready(function() {
+                a('div', 'rr fw pagex page="home"', '1').css('display', 'none').css('margin', '15px').prepend('').ready(function() {
                     $(document).on('click', '[discover-avatars]', function() {
 
                         $('.m1').html('').css('grid-template-columns', 'repeat(auto-fill, minmax(150px, 1fr))')
