@@ -37,7 +37,7 @@
             "name": "Search",
             "url": "/mobile?ll=search",
             "icons": [{
-                "src": "/icon-192x192.png",
+                "src": "https://canary.animekeyo.com/icon-192x192.png",
                 "type": "image/png",
                 "sizes": "192x192"
             }]
@@ -46,7 +46,7 @@
             "name": "Profile",
             "url": "/mobile?ll=account",
             "icons": [{
-                "src": "/icon-192x192.png",
+                "src": "https://canary.animekeyo.com/icon-192x192.png",
                 "type": "image/png",
                 "sizes": "192x192"
             }]
