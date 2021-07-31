@@ -292,17 +292,23 @@
                     .prepend(
                         a('div', 'fw ff rr fbg', '41')
                         .css('height', '14rem')
-
+                        .css('margin', '20px').css('margin-bottom', 'unset')
                         .css('align-items', 'flex-start')
                         .css('justify-content', 'flex-start')
                         .css('align-content', 'flex-start')
                         .prepend(
                             // Profile Page Banner
-                            a('div', 'fw ff rr fbg', '411')
+                            a('div', 'fw ff rr fbg ', '411')
                             .css('background', 'var(--r10)')
                             .css('height', '11rem')
+                            .css('overflow', 'hidden')
+                            .css('border-radius', '20px 5px')
                             .prepend(
-                                ''
+                                a('div', 'fw ff aa fbg get-user-avatar', '4111').html('')
+                                .css('filter', ' blur(40px)')
+                                .css('margin', '-100%')
+                                .css('top', '-20%')
+                                .css('left', '-0%')
                             ),
                             ///Profile Page Avatar 
                             a('div', 'fw aa ff fbg get-user-avatar', '412')
@@ -333,11 +339,11 @@
                         ),
                         a('div', 'ff rr fw', '42').prepend(
                             a('div', 'ff fw rr', '421').prepend(
-                                a('div', 'ff get-user-displayname', '4211').text('')
+                                a('div', 'ff get-user-displayname', '4211').text('').css('font-size', '1.3rem').css('margin-left', '20px')
                             )
                             .css('align-items', 'flex-start')
                             .css('justify-content', 'flex-start')
-                            .css('margin', '15px 25px')
+                            .css('margin', '20px 20px')
                         )
                     )),
                 ///Login Acces///
