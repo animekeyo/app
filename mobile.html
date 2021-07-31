@@ -232,7 +232,7 @@
 
         firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
-                // User is signed in.
+                // User is signed in.//
                 console.log(user.uid)
                 const data = firebase.database().ref('/users/' + user.uid);
                 data.update({
