@@ -268,10 +268,6 @@
                         $(document).ready(function() {
                             $('[view-page][page="' + snapshot.val().page + '"]').trigger("click");
                         });
-                    } else {
-                        $(document).ready(function() {
-                            $('[view-page][page="home"]').trigger("click");
-                        });
                     }
                     if (typeof snapshot.val().userid == "undefined") {
                         data.update({
