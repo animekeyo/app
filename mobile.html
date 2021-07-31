@@ -316,7 +316,7 @@
                         }
                         myFunction()
                     } else {
-                        $('[get-user-displayname]').text(snapshot.val().displayName)
+
                     }
                 })
                 $('.m3').css('display', 'none')
@@ -339,6 +339,8 @@
                     //
 
                 $(document).on('click', '[get-user]', function() {
+                    $('body > div[pagex]').hide()
+                    $('[page="account"]').show()
                     const userid = $(this).attr('userid')
                     if (userid) {
                         const data = firebase.database().ref('/users/' + userid);
@@ -347,6 +349,7 @@
                             $('.m4').css('display', 'flex')
                             $('[get-user-avatar]').css('background-image', 'url(' + snapshot.val().avatar + ')')
                             $('[get-user-banner]').css('background-image', 'url(' + snapshot.val().banner + ')')
+                            $('[get-user-displayname]').text(snapshot.val().displayName)
                         })
                     }
 
