@@ -13,6 +13,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-messaging.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.7/dist/sweetalert2.all.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
@@ -116,6 +117,24 @@
 
 
     <script>
+        const messaging = firebase.messaging();
+
+        messaging.getToken({
+            vapidKey: 'BO_pr8rrSONw5247EO9yl9dfUfz635UjfXd6fb-wiExxOwzorFJag7BbkqQLiBtqvkM3Zcln2bvppZLUCmODLFI'
+        }).then((currentToken) => {
+            if (currentToken) {
+                // Send the token to your server and update the UI if necessary
+                // ...
+            } else {
+                // Show permission request UI
+                console.log('No registration token available. Request permission to generate one.');
+                // ...
+            }
+        }).catch((err) => {
+            console.log('An error occurred while retrieving token. ', err);
+            // ...
+        });
+
         // sh('class')
         // a('div','id','class')
         // srcx('img','id','class','src') 
