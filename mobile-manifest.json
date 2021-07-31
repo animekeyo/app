@@ -6,7 +6,6 @@
     "start_url": "/mobile",
     "name": "Anime Keyo",
     "short_name": "Anime Keyo",
-    "android_package_name": "com.animekeyo.android",
     "categories": [
         "social",
         "anime",
