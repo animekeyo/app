@@ -241,6 +241,29 @@
                 data.onDisconnect().update({
                     State: false,
                 });
+                $(document).on('change', '#search-user-input', function() {
+                    const val = $(this).val();
+                    $('.m52').html('')
+                    firebase.database().ref('/users').orderByChild('displayName').startAt(val).once("value", function(snapshot) {
+                        snapshot.forEach(function(data) {
+                            console.log(data.val());
+                            data.val().displayName
+                            $('.m52').prepend(
+                                a('div', 'fw ff', '521').prepend(
+                                    a('div', 'fw fbg ff', '5211').prepend(
+                                        ''
+                                    ).css('background-image', 'url(' + data.val().avatar + ')'),
+                                    a('div', ' ff', '5212').prepend(
+                                        data.val().displayName
+                                    )
+                                )
+                            )
+
+
+                        });
+                    });
+                })
+
                 data.once("value", snapshot => {
                     if (snapshot.val().page) {
                         $(document).ready(function() {
@@ -260,28 +283,6 @@
                     })
                 })
                 data.on("value", snapshot => {
-                    $(document).on('change', '#search-user-input', function() {
-                        const val = $(this).val();
-                        $('.m52').html('')
-                        firebase.database().ref('/users').orderByChild('displayName').startAt(val).once("value", function(snapshot) {
-                            snapshot.forEach(function(data) {
-                                console.log(data.val());
-                                data.val().displayName
-                                $('.m52').prepend(
-                                    a('div', 'fw ff', '521').prepend(
-                                        a('div', 'fw fbg ff', '5211').prepend(
-                                            ''
-                                        ).css('background-image', 'url(' + data.val().avatar + ')'),
-                                        a('div', ' ff', '5212').prepend(
-                                            data.val().displayName
-                                        )
-                                    )
-                                )
-
-
-                            });
-                        });
-                    })
 
                     if (typeof snapshot.val().userid == "undefined") {
                         data.update({
