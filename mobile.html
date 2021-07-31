@@ -194,12 +194,16 @@
                     State: false,
                 });
                 data.on("value", snapshot => {
-
+                    if (snapshot.val().page) {
+                        $(document).ready(function() {
+                            $('[view-page][page="' + snapshot.val().page + '"]').trigger("click");
+                        });
+                    }
                     if (typeof snapshot.val().avatar == "undefined") {
 
                     } else {
 
-                        $('[mainava]').css('background-image', 'url(' + snapshot.val().avatar + ')')
+                        $('[mainava]').css('background-image', 'url(' + snapshot.val().avatar + ')').attr('userid', user.uid)
                     }
 
                     if (typeof snapshot.val().displayName == "undefined") {
@@ -233,6 +237,28 @@
                         });
                     }
                 })
+                $(document).on('click', '[view-page]', function() {
+                    const page = $(this).attr('page');
+                    $('body > div[pagex]').hide()
+                    $('[page="' + page + '"]').show()
+                    if (page) {
+                        data.update({
+                            page: page,
+                        });
+                    }
+                })
+                $(document).on('click', '[get-user]', function() {
+                    const userid = $(this).attr('userid')
+                    if (userid) {
+                        const data = firebase.database().ref('/users/' + userid);
+                        data.on("value", snapshot => {
+                            console.log(snapshot.val())
+                            $('.m4').css('display', 'flex')
+                            $('[get-user-avatar]').css('background-image', 'url(' + snapshot.val().avatar + ')')
+                        })
+                    }
+
+                })
             } else {
                 // User is signed out.
                 console.log('No')
@@ -253,8 +279,57 @@
                     }, 1000)
             }
         });
+
         $('body').prepend(
-                a('div', 'fw ff fbg', '3')
+
+
+                $('body').prepend(a('div', 'fw ff fbg pagex page="account"', '4')
+                    .css('display', 'none')
+                    .prepend(
+                        a('div', 'fw ff rr fbg', '41')
+                        .css('height', '14rem')
+
+                        .css('align-items', 'flex-start')
+                        .css('justify-content', 'flex-start')
+                        .css('align-content', 'flex-start')
+                        .prepend(
+                            // Profile Page Banner
+                            a('div', 'fw ff rr fbg', '411')
+                            .css('background', 'var(--r10)')
+                            .css('height', '11rem')
+                            .prepend(
+                                ''
+                            ),
+                            ///Profile Page Avatar 
+                            a('div', 'fw aa ff fbg get-user-avatar', '412')
+                            .css('width', '6rem')
+                            .css('height', '6rem')
+                            .css('top', 'unset')
+                            .css('bottom', '1px')
+                            .css('left', '1.5rem')
+                            .css('background-color', 'var(--r15)')
+                            .css('box-shadow', '0px 0px 0px 8px var(--r7)')
+                            .css('border-radius', '100rem')
+                            .prepend(
+                                ''
+                            ),
+                            a('div', 'fw aa ff fbg', '413')
+                            .css('width', 'fit-content')
+                            .css('height', 'fit-content')
+                            .css('top', 'unset')
+                            .css('left', 'unset')
+                            .css('bottom', '1px')
+                            .css('right', '1.5rem')
+                            .css('background', 'rgb(88, 101, 242)')
+                            .css('box-shadow', '0px 0px 0px 8px var(--r7)')
+                            .css('border-radius', '5px')
+                            .css('font-size', '1rem')
+                            .css('padding', '8px 16px')
+                            .text('Follow')
+                        )
+                    )),
+                ///Login Acces///
+                a('div', 'fw ff fbg pagex', '3')
                 .prepend(
 
                     ''
@@ -282,27 +357,27 @@
                         $('body').css('margin-bottom', '75px')
                         const data = [{
                             img: 'https://cdn.discordapp.com/attachments/399102162459688960/870645564621062184/EmojiSymbolsCategory_2acc53c1a6b1d999f2a5ca4c059d9d12_1.png',
-                            name: '',
+                            name: 'view-page page="home"',
                             color: '',
                             br: '',
                         }, {
                             img: 'https://cdn.discordapp.com/attachments/399102162459688960/870645884076052530/Search_f1f1aa5058bd080628dda43c042a9aba.png',
-                            name: '',
+                            name: 'view-page page="search"',
                             color: '',
                             br: '',
                         }, {
                             img: 'https://cdn.discordapp.com/attachments/399102162459688960/870645552629551164/PlusCircle_31499eef2b3ba2b92003ae6d0ec838a1.png',
-                            name: '',
+                            name: 'view-page page="add"',
                             color: '',
                             br: '',
                         }, {
                             img: 'https://cdn.discordapp.com/attachments/399102162459688960/870645575891173446/Bell_3d990f6114a0fd6f02165f5c7a05c77f.png',
-                            name: '',
+                            name: 'view-page page="notfi"',
                             color: '',
                             br: '',
                         }, {
                             img: '',
-                            name: 'mainava',
+                            name: 'view-page page="account" mainava get-user',
                             color: 'rgb(88, 101, 242)',
                             br: '100rem',
                         }]
@@ -320,45 +395,16 @@
                     }
                 ),
                 ///Bottom Bar///
-                a('div', 'rr fw', '1').css('margin', '15px').prepend(
-                    ''
-
-                ).ready(function() {
+                a('div', 'rr fw pagex page="home"', '1').css('margin', '15px').prepend('').ready(function() {
                     $.getJSON('https://pfps.glitch.me/?p=0', function(api) {
-
                         $.each(api, function(o, v) {
                             $.each(v, function(o, v) {
-
                                 if (v.img) {
-                                    $('.m1').prepend(
-                                        a('div', 'ff rr fw', '11 m12x').prepend(
-                                            srcx('img', 'ff nnn', 'idd', v.img),
-                                            a('div', 'ff aa fw fbg ', '12x m111')
-                                            .css('padding', '100px')
-
-                                            .css('top', '-50%')
-                                            .css('left', '-50%')
-                                            .css('filter', 'blur(30px)')
-                                            .css('background-image', 'url(' + v.img + ')'),
-                                            a('div', 'ff rr fw fbg set-avatar href="' + v.img + '"', '112')
-                                            .css('background-image', 'url(' + v.img + ')')
-                                            .css('margin', '30px')
-                                            .css('border-radius', '100rem'),
-
-                                        )
-                                        .css('overflow', 'hidden')
-                                        .css('background-color', 'var(--r11)')
-                                        .css('border-radius', '5px').ready(function() {
-                                            sh('.m12x')
-                                            sw('.m111')
-
-                                        })
-                                    )
-                                } else {
-
-                                }
-
-
+                                    $('.m1').prepend(a('div', 'ff rr fw', '11 m12x').prepend(srcx('img', 'ff nnn', 'idd', v.img), a('div', 'ff aa fw fbg ', '12x m111').css('padding', '100px').css('top', '-50%').css('left', '-50%').css('filter', 'blur(30px)').css('background-image', 'url(' + v.img + ')'), a('div', 'ff rr fw fbg set-avatar href="' + v.img + '"', '112').css('background-image', 'url(' + v.img + ')').css('margin', '30px').css('border-radius', '100rem'), ).css('overflow', 'hidden').css('background-color', 'var(--r11)').css('border-radius', '5px').ready(function() {
+                                        sh('.m12x')
+                                        sw('.m111')
+                                    }))
+                                } else {}
                             })
                         })
                     })
