@@ -280,6 +280,7 @@
                             console.log(snapshot.val())
                             $('.m4').css('display', 'flex')
                             $('[get-user-avatar]').css('background-image', 'url(' + snapshot.val().avatar + ')')
+                            $('[get-user-banner]').css('background-image', 'url(' + snapshot.val().banner + ')')
                         })
                     }
 
@@ -329,7 +330,8 @@
                                 .css('filter', ' blur(40px)')
                                 .css('margin', '-100%')
                                 .css('top', '-20%')
-                                .css('left', '-0%')
+                                .css('left', '-0%'),
+                                a('div', 'fw ff aa fbg get-user-banner', '4111').html('')
                             ),
                             ///Profile Page Avatar 
                             a('div', 'fw aa ff fbg get-user-avatar', '412')
