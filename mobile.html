@@ -241,10 +241,11 @@
                 data.onDisconnect().update({
                     State: false,
                 });
-                $(document).on('change', '#search-user-input', function() {
+                $(document).on('input', '#search-user-input', function() {
                     const val = $(this).val();
-                    $('.m52').html('')
+
                     firebase.database().ref('/users').orderByChild('displayName').startAt(val).once("value", function(snapshot) {
+                        $('.m52').html('')
                         snapshot.forEach(function(data) {
                             console.log(data.val());
                             data.val().displayName
